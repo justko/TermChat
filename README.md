@@ -16,9 +16,9 @@
 ## 客户端操作 ##
 
 > * <code>quit</code>
->> 退出
+>> 不再需要发送消息，退出客户端
 > * <code>toaMessage</code>
->>给用户a发送消息Message
+>>给用户a发送消息Message，
 ## 服务端操作 ##
 >* <code>users</code>
->> 显示当前在用户
+>> 以"用户名:socket描述符"的方式显示当前所有在线用户
