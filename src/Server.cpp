@@ -114,8 +114,3 @@ void *commandLine(void *)
         }
     }
 }
-
-void strmd(char* dest,char* src,int n){
-    int i=0;
-    while((dest[i++]=src[n+i++])!='\0');
-}
