@@ -13,12 +13,12 @@ void *recvThreadImp(void *arg);
 int startClient(char *ip, int port);
 bool online(int client, char *othername);
 
-const char *short_options = "p::i:vh";
+const char *short_options = "p:i:vh";
 extern char *optarg;
 const struct option long_options[] = {
     {"help", no_argument, NULL, 'h'},
     {"ip", required_argument, NULL, 'i'},
-    {"port", optional_argument, NULL, 'p'},
+    {"port", required_argument, NULL, 'p'},
     {"version", no_argument, NULL, 'v'},
     {NULL, no_argument, NULL, 0}};
 
