@@ -24,11 +24,6 @@ const struct option long_options[] = {
 
 int main(int argc, char **argv)
 {
-    if (argc <= 1)
-    {
-        cout << "Usage error. Use -h for help" << endl;
-        return -1;
-    }
     int opt;
     int help = 0, version = 0, port = 18086;
     char ip[20]="127.0.0.1";
@@ -47,9 +42,6 @@ int main(int argc, char **argv)
             break;
         case 'i':
             strcpy(ip, optarg);
-            break;
-        case '?':
-            cout << "未知参数" << endl;
             break;
         }
     }
