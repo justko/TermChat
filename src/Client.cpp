@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     }
     int opt;
     int help = 0, version = 0, port = 18086;
-    char ip[20];
+    char ip[20]="127.0.0.1";
     while ((opt = getopt_long(argc, argv, short_options, long_options, nullptr)) != -1)
     {
         switch (opt)
