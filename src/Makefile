@@ -1,5 +1,5 @@
 .SUFFIXES: .cpp  .out
-.PhONY:clean
+.PHONY:clean
 .cpp.out:
 	g++ -std=c++11 $< -o $@  -lpthread
 clean:
