@@ -23,7 +23,7 @@ int startServer()
     serveraddr.sin_family = AF_INET;
     serveraddr.sin_port = htons(18086);
     serveraddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    int server = socket(AF_INET, SOCK_STREAM, 0);
+    int server = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
     bind(server, (const sockaddr *)&serveraddr, sizeof(sockaddr));
     std::cout << "Server started" << std::endl;
     listen(server, 5);

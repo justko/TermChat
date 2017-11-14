@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 {
     int opt;
     int help = 0, version = 0, port = 18086;
-    char ip[20]="127.0.0.1";
+    char ip[20] = "127.0.0.1";
     while ((opt = getopt_long(argc, argv, short_options, long_options, nullptr)) != -1)
     {
         switch (opt)
@@ -78,6 +78,21 @@ int startClient(char *ipp, int port)
     errorCode = connect(client, (const struct sockaddr *)&clientaddr, sizeof(struct sockaddr));
     if (errorCode != 0)
     {
+        int i = errno;
+        switch (i)
+        {
+        case ECONNREFUSED:
+            cout << "连接被拒绝" << endl;
+            break;
+        case ETIMEDOUT:
+            cout << "连接超时" << endl;
+            break;
+        case EHOSTUNREACH:
+            cout << "主机不可达" << endl;
+            break;
+        default:
+            cout << "未知错误" << endl;
+        }
         cout << "could not connect to the Server" << endl;
     }
     else
